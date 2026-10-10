@@ -24,13 +24,23 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
           xcodebuild -version
 
-      - name: Install Dependencies
+      - name: Install Toolchain and Dependencies
         run: |
           brew install xcodegen
+          rustup target add aarch64-apple-ios
+
+      - name: Build Rust Core
+        run: |
+          if [ -d "rust-core" ]; then
+            cd rust-core
+            cargo build --release --target aarch64-apple-ios
+            cd ..
+          fi
 
       - name: Make Scripts Executable
         run: |
           chmod +x ./build-ipa.sh || true
+          chmod +x ./build-ios.sh || true
 
       - name: Build IPA
         run: |
