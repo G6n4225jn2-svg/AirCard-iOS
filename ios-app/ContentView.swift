@@ -994,7 +994,7 @@ struct PairingTab: View {
                             HStack {
                                 Spacer()
                                 Image(systemName: "trash.fill")
-                                Text("Delete Pairing File")
+                                Text("解除配对 File")
                                 Spacer()
                             }
                             .font(.subheadline.bold())
@@ -1003,11 +1003,11 @@ struct PairingTab: View {
                     }
                 }
                 .confirmationDialog(
-                    "Delete pairing session?",
+                    "解除配对 session?",
                     isPresented: $showDeleteConfirm,
                     titleVisibility: .visible
                 ) {
-                    Button("Delete Pairing", role: .destructive) { vm.deletePairingFile() }
+                    Button("解除配对", role: .destructive) { vm.deletePairingFile() }
                     Button("Cancel", role: .cancel) {}
                 } message: {
                     Text("The active pairing credentials will be removed so you can re-pair or import another file.")
@@ -1022,7 +1022,7 @@ struct PairingTab: View {
                             HStack(spacing: 8) {
                                 Image(systemName: "square.and.arrow.down.fill")
                                     .foregroundStyle(.blue)
-                                Text("Import Pairing File…")
+                                Text("导入配对文件")
                                     .font(.headline)
                                 Spacer()
                                 Image(systemName: "chevron.right")
@@ -1168,7 +1168,7 @@ struct PairingTab: View {
                                         Spacer()
                                         Image(systemName: "antenna.radiowaves.left.and.right")
                                             .font(.body.weight(.semibold))
-                                        Text(vm.hasPairingFile ? "Re-Pair This iPhone" : "Pair This iPhone")
+                                        Text(vm.hasPairingFile ? "Re-配对本鸡" : "配对本鸡")
                                             .font(.headline)
                                         Spacer()
                                     }
@@ -1598,7 +1598,7 @@ struct WalletCardsTab: View {
                     } label: {
                         HStack(spacing: 4) {
                             Image(systemName: vm.isScanningCards ? "stop.circle.fill" : "wave.3.left.circle")
-                            Text(vm.isScanningCards ? "Stop Scan" : "Scan Cards")
+                            Text(vm.isScanningCards ? "Stop Scan" : "扫描卡片")
                         }
                         .font(.subheadline.bold())
                         .foregroundStyle(vm.isScanningCards ? .red : .blue)
@@ -1884,7 +1884,7 @@ struct WalletCardsTab: View {
                     Text("1.")
                         .bold()
                         .foregroundStyle(.blue)
-                    Text("Tap **Scan Cards** in the toolbar above.")
+                    Text("Tap **扫描卡片** in the toolbar above.")
                 }
                 HStack(alignment: .top, spacing: 10) {
                     Text("2.")
@@ -1913,7 +1913,7 @@ struct WalletCardsTab: View {
                     HStack(spacing: 6) {
                         Spacer()
                         Image(systemName: vm.isScanningCards ? "stop.circle.fill" : "wave.3.left.circle")
-                        Text(vm.isScanningCards ? "Stop Scan" : "Scan Cards")
+                        Text(vm.isScanningCards ? "Stop Scan" : "扫描卡片")
                         Spacer()
                     }
                     .font(.headline)
